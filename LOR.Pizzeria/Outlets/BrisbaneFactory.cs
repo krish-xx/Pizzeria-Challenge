@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using LOR.Pizzeria.Common;
-using LOR.Pizzeria.Pizza;
 
-namespace LOR.Pizzeria.Outlets
+namespace LOR.Pizzeria
 {
     class BrisbaneFactory : PizaFactory
     {
-        private string mFactoryCode = "1";
-        private string mFactoryName = "Brisbane";
+        private readonly string factoryCode = "1";
+        private readonly string factoryName = "Brisbane";
 
-        public List<Pizza.Pizza> AvailablePizzas { get; set; }
+        public List<Pizza> AvailablePizzas { get; set; }
 
         public BrisbaneFactory()
         {
@@ -18,24 +17,24 @@ namespace LOR.Pizzeria.Outlets
 
         public override string GetFactoryCode()
         {
-            return mFactoryCode;
+            return factoryCode;
         }
 
         public override string GetFactoryName()
         {
-            return mFactoryName;
+            return factoryName;
         }
 
 
         public override void SetupAvailablePizzas()
         {
-            AvailablePizzas = new List<Pizza.Pizza> { new Capriciosa(20), new Florenza(21), new Margherita(22) };
+            AvailablePizzas = new List<Pizza> { new Capriciosa(20), new Florenza(21), new Margherita(22) };
         }
 
         public override string PromptAvailablePizzas()
         {
             string sItems = "";
-            foreach (Pizza.Pizza p in AvailablePizzas)
+            foreach (Pizza p in AvailablePizzas)
             {
                 sItems += "\n " + p.GetCode() + " " + p.GetName() + " (" + p.GetPrice() + " " + Constants.G_CURRENCY_SYMBOL + ")";
             }
@@ -44,7 +43,7 @@ namespace LOR.Pizzeria.Outlets
                 + sItems + "\n What would you like to order? (Enter number)";
         }
 
-        public override Pizza.Pizza GetPizza(string sType)
+        public override Pizza GetPizza(string sType)
         {
             if (sType == "1")
             {

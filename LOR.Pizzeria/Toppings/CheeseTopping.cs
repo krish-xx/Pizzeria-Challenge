@@ -2,20 +2,20 @@
 {
     class CheeseTopping : Topping
     {
-        public CheeseTopping(Pizza.Pizza baseComponent)
+        public CheeseTopping(Pizza baseComponent)
             : base(baseComponent)
         {
-            this._name = "Extra Cheese";
-            this._price = 5.0;
+            this.name = "Extra Cheese";
+            this.price = 5.0;
         }
 
         public string GetToppingName()
         {
-            return _name;
+            return name;
         }
         public double GetToppingPrice()
         {
-            return _price;
+            return price;
         }
     }
 }

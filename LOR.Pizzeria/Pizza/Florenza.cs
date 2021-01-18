@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LOR.Pizzeria.Pizza
+namespace LOR.Pizzeria
 {
     class Florenza : Pizza
     {
-        public string m_Code = "2";
-        private string m_Name = "Florenza";
-        private double m_Price = 200.0;
-        private List<string> m_Ingredients = new List<string>();
+        public string code = "2";
+
+        private string name = "Florenza";
+        private double price = 200.0;
+        private List<string> ingredients = new List<string>();
 
         public Florenza()
         {
@@ -18,43 +19,43 @@ namespace LOR.Pizzeria.Pizza
         public Florenza(double dPrice)
         {
             setupIngredients();
-            m_Price = dPrice;
+            price = dPrice;
         }
 
         private void setupIngredients()
         {
-            m_Ingredients = new List<string> { "Olives", "Pastrami", "Mozarella", "Onion" };
+            ingredients = new List<string> { "Olives", "Pastrami", "Mozarella", "Onion" };
         }
 
         public override string GetCode()
         {
-            return m_Code;
+            return code;
         }
 
         public override string GetName()
         {
-            return m_Name;
+            return name;
         }
 
         public override double GetPrice()
         {
-            return m_Price;
+            return price;
         }
 
         public override List<string> GetIngediants()
         {
-            return m_Ingredients;
+            return ingredients;
         }
 
         public override string GetIngediantsToShow()
         {
-            return string.Join(",", m_Ingredients);
+            return string.Join(",", ingredients);
         }
 
         public override void Prepare()
         {
-            Console.WriteLine("Preparing " + m_Name + "...");
-            string sIngredients = string.Join(",", m_Ingredients);
+            Console.WriteLine("Preparing " + name + "...");
+            string sIngredients = string.Join(",", ingredients);
             Console.WriteLine("Adding " + sIngredients);
             Console.WriteLine("Preperation done...!!!");
         }

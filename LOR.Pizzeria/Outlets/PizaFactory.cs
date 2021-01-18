@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LOR.Pizzeria.Outlets
+﻿namespace LOR.Pizzeria
 {
     /// <summary>
     /// Base class for factory (location based stores)
@@ -33,6 +29,6 @@ namespace LOR.Pizzeria.Outlets
         /// </summary>
         /// <param name="sType"></param>
         /// <returns></returns>
-        public abstract Pizza.Pizza GetPizza(string sType);
+        public abstract Pizza GetPizza(string sType);
     }
 }

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LOR.Pizzeria.Toppings
+namespace LOR.Pizzeria
 {
-    public abstract class Topping : Pizza.Pizza
+    public abstract class Topping : Pizza
     {
-        Pizza.Pizza _baseComponent = null;
+        Pizza _baseComponent = null;
 
-        protected string _name = "Undefined Decorator";
-        protected double _price = 0.0;
+        protected string name = "Undefined Decorator";
+        protected double price = 0.0;
 
-        protected Topping(Pizza.Pizza baseComponent)
+        protected Topping(Pizza baseComponent)
         {
             _baseComponent = baseComponent;
         }
@@ -23,13 +23,13 @@ namespace LOR.Pizzeria.Toppings
 
         public override string GetName()
         {
-            return string.Format("{0}, {1}", _baseComponent.GetName(), _name);
+            return string.Format("{0}, {1}", _baseComponent.GetName(), name);
         }
 
 
         public override double GetPrice()
         {
-            return _price + _baseComponent.GetPrice();
+            return price + _baseComponent.GetPrice();
         }
 
         /// <summary>

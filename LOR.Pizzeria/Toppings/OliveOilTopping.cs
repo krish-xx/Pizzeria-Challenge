@@ -2,20 +2,20 @@
 {
     class OliveOilTopping : Topping
     {
-        public OliveOilTopping(Pizza.Pizza baseComponent)
+        public OliveOilTopping(Pizza baseComponent)
             : base(baseComponent)
         {
-            this._name = "Olive Oil";
-            this._price = 3.0;
+            this.name = "Olive Oil";
+            this.price = 3.0;
         }
 
         public string GetToppingName()
         {
-            return _name;
+            return name;
         }
         public double GetToppingPrice()
         {
-            return _price;
+            return price;
         }
     }
 }
