@@ -19,13 +19,14 @@ namespace LOR.Pizzeria
                 int i = 1;
                 foreach (Pizza p in pizzaList)
                 {
-                    Console.WriteLine("#" + i.ToString() + " - " + "Item: {0}, Price: {1}", p.GetName(), p.GetPrice());
-                    total += p.GetPrice();
+                    var price = p.GetPrice();
+                    Console.WriteLine($"#{i} -Item: {p.GetName()}, Price: {price}");
+                    total += price;
                     i += 1;
                 }
 
                 Console.WriteLine("====================================");
-                Console.WriteLine("TOTAL PAYABLE        " + total);
+                Console.WriteLine($"TOTAL PAYABLE        {total}");
                 Console.WriteLine("====================================");
             }
             else

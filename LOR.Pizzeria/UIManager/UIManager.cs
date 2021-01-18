@@ -96,32 +96,26 @@ namespace LOR.Pizzeria
             string sPrompt = Console.ReadLine();
 
             Pizza p = factory.GetPizza(sPrompt);
-            //Pizza pTemp = factory.GetPizza(sPrompt);
-
-
             if (p != null)
             {
-                //Now show cheese option
                 CheeseTopping t1 = new CheeseTopping(p);
-                Console.WriteLine("Do you want to add " + t1.GetToppingName() + " for additional " + t1.GetToppingPrice() + " " + Constants.G_CURRENCY_SYMBOL + "?   Y/N");
+                Console.WriteLine($"Do you want to add {t1.GetToppingName()} for additional {t1.GetToppingPrice()} {Constants.G_CURRENCY_SYMBOL}?   Y/N");
                 sPrompt = Console.ReadLine();
                 if (sPrompt.ToUpper() == "Y")
                 {
                     p = new CheeseTopping(p);
                 }
 
-                //Now show mayo option
                 MayoTopping t2 = new MayoTopping(p);
-                Console.WriteLine("Do you want to add " + t2.GetToppingName() + " for additional " + t2.GetToppingPrice() + " " + Constants.G_CURRENCY_SYMBOL + "?   Y/N");
+                Console.WriteLine($"Do you want to add {t2.GetToppingName()} for additional {t2.GetToppingPrice()} {Constants.G_CURRENCY_SYMBOL}?   Y/N");
                 sPrompt = Console.ReadLine();
                 if (sPrompt.ToUpper() == "Y")
                 {
                     p = new MayoTopping(p);
                 }
 
-                //Now show olive oil option
                 OliveOilTopping t3 = new OliveOilTopping(p);
-                Console.WriteLine("Do you want to add " + t3.GetToppingName() + " for additional " + t3.GetToppingPrice() + " " + Constants.G_CURRENCY_SYMBOL + "?   Y/N");
+                Console.WriteLine($"Do you want to add {t3.GetToppingName()} for additional {t3.GetToppingPrice()} {Constants.G_CURRENCY_SYMBOL}?   Y/N");
                 sPrompt = Console.ReadLine();
                 if (sPrompt.ToUpper() == "Y")
                 {
@@ -132,20 +126,17 @@ namespace LOR.Pizzeria
                 Console.WriteLine("\n\n\nItem successfully added to order.");
                 order.DisplayOrder();
                 Console.WriteLine("\n\n\n");
-
             }
-
         }
 
         public void RemoveItem()
         {
             Console.WriteLine("Enter item number to remove.");
             string spro = Console.ReadLine();
+
             order.RemoveFromOrder(int.Parse(spro) - 1);
             order.DisplayOrder();
             Console.WriteLine("\n\n\n");
-
-
         }
 
         public void CheckOut()
